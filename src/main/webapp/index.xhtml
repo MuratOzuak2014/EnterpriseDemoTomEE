@@ -13,16 +13,32 @@
             <h:form id="mainForm">
                 <p:messages autoUpdate="true" />
                 <p:panelGrid columns="2" >
-                    <p:outputLabel value="E-mail : " />
-                    <p:inputText id="emailText" value="#{indexBean.email}" required="true" requiredMessage="Lütfen isim alanını boş bırakmayınız." >
+                    <p:outputLabel value="Ad : " />
+                    <p:inputText id="adText" value="#{indexBean.kullanici.kullaniciAd}" required="true" requiredMessage="Lütfen isim alanını boş bırakmayınız." >
                         <p:ajax event="blur"  />
                     </p:inputText>
-                    <p:outputLabel value="Password : " />
-                    <p:password id="passwordText" value="#{indexBean.password}" required="true" requiredMessage="Lütfen isim alanını boş bırakmayınız." >
+                    <p:outputLabel value="Soyad : " />
+                    <p:inputText id="soyadText" value="#{indexBean.kullanici.kullaniciSoyad}" required="true" requiredMessage="Lütfen isim alanını boş bırakmayınız." >
+                        <p:ajax event="blur"  />
+                    </p:inputText>
+                    <p:outputLabel value="Cinsiyet : " />
+                    <p:inputText id="cinsiyetText" value="#{indexBean.kullanici.cinsiyet}" required="true" requiredMessage="Lütfen isim alanını boş bırakmayınız." >
+                        <p:ajax event="blur"  />
+                    </p:inputText>
+                    <p:outputLabel value="Doğum Tarihi : " />
+                    <p:calendar id="dogumTarihiCal" value="#{indexBean.kullanici.dogumTarihi}" required="true" requiredMessage="Lütfen isim alanını boş bırakmayınız." >
+                        <p:ajax event="blur"  />
+                    </p:calendar>
+                    <p:outputLabel value="E-mail : " />
+                    <p:inputText id="emailText" value="#{indexBean.kullanici.email}" required="true" requiredMessage="Lütfen isim alanını boş bırakmayınız." >
+                        <p:ajax event="blur"  />
+                    </p:inputText>
+                    <p:outputLabel value="Şifre : " />
+                    <p:password id="passwordText" value="#{indexBean.kullanici.sifre}" required="true" requiredMessage="Lütfen isim alanını boş bırakmayınız." >
                         <p:ajax event="blur"  />
                     </p:password>
 
-                    <p:commandButton value="Tıkla" icon="ui-icon-trash"/>
+                    <p:commandButton value="Tıkla" actionListener="#{indexBean.kaydet()}" icon="ui-icon-trash"/>
                 </p:panelGrid>
             </h:form>
         </f:view>

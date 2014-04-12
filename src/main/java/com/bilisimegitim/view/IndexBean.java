@@ -6,6 +6,9 @@
 
 package com.bilisimegitim.view;
 
+import com.bilisimegitim.model.Kullanici;
+import com.bilisimegitim.service.KullaniciService;
+import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
@@ -17,28 +20,24 @@ import javax.faces.bean.ViewScoped;
 @ViewScoped
 public class IndexBean {
 
-    private String email;
-    private String password;
-
-    public IndexBean() {
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-
+    @EJB
+    private KullaniciService kullaniciService;
+    private Kullanici kullanici;
     
+    public IndexBean() {
+        kullanici =  new Kullanici();
+    }
+
+    public void kaydet(){
+        kullaniciService.kullaniciOlustur(kullanici);
+    }
+    
+    public Kullanici getKullanici() {
+        return kullanici;
+    }
+
+    public void setKullanici(Kullanici kullanici) {
+        this.kullanici = kullanici;
+    }
+  
 }
