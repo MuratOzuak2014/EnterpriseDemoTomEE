@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package com.bilisimegitim.bean;
+package com.bilisimegitim.view;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
